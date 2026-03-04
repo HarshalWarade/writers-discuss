@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
   return (
-    <div className="h-dvh flex flex-col bg-white overflow-hidden">
+    <div className="h-dvh flex flex-col bg-background text-text overflow-hidden">
       {/* Navbar */}
-      <header className="h-20 shrink-0">
+      <header className="h-20 shrink-0 border-b border-mist-extra">
         <Navbar />
       </header>
 
@@ -15,7 +15,7 @@ const MainLayout = () => {
       </main>
 
       {/* Footer */}
-      <footer className="shrink-0 border-t py-4 text-center px-16">
+      <footer className="shrink-0 border-t border-mist-extra py-4 text-center px-16">
         <p>Copyright © 2026</p>
       </footer>
     </div>
