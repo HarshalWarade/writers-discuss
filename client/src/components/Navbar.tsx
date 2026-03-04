@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="gap-2 flex px-16 h-20">
       <div className="flex-1 flex items-center">
         {/* logo section */}
-        <NavLink to={"/"} className="font-semibold text-2xl">
+        <NavLink to={"/"} className="font-bold text-2xl text-red-label">
           Logo
         </NavLink>
       </div>
