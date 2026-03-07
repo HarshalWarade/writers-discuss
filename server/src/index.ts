@@ -4,6 +4,7 @@ import cors from "cors";
 
 import userRoutes from "@routes/UserRoutes";
 import connectDB from "@config/db";
+import swagger from "./swagger";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ const startServer = async () => {
   app.use(express.json());
 
   app.use("/api/users", userRoutes);
+  app.use("/api-docs", swagger);
 
   app.get("/", (req: Request, res: Response) => {
     return res.status(200).json({ message: "Server is responding" });
