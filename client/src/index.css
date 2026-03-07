@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+    --font-rubik: "Rubik", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+}
 
 @theme {
     --color-primary: #3283D5;
@@ -31,4 +39,8 @@
 
 *::selection {
     background: #ff040428;
+}
+
+body {
+    font-family: var(--font-rubik);
 }

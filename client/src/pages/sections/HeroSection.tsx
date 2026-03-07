@@ -11,7 +11,7 @@ const HeroSection = () => {
     <section className="h-full flex items-center">
       <div className="w-full grid md:grid-cols-2 gap-15 items-center">
         <div className="flex flex-col gap-5">
-          <h2 className="text-4xl md:text-6xl font-semibold leading-tight">
+          <h2 className="text-4xl md:text-6xl font-semibold leading-tight font-playfair">
             <span className={COMMON_SPAN_CLASS}>Everything</span> a{" "}
             <span className={COMMON_SPAN_CLASS}>Writer</span> needs in one
             place.
