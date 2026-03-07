@@ -1,7 +1,20 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+import mongoose, { Document, Model } from "mongoose";
+import bcrypt from "bcryptjs";
 
-const userSchema = new mongoose.Schema(
+export interface IUser extends Document {
+  username: string;
+  email: string;
+  password: string;
+  bio?: string;
+  pagesBalance: number;
+  totalPagesEarned: number;
+
+  rank: string;
+
+  comparePassword(candidatePassword: string): Promise<boolean>;
+}
+
+const userSchema = new mongoose.Schema<IUser>(
   {
     username: {
       type: String,
@@ -50,17 +63,19 @@ const userSchema = new mongoose.Schema(
   },
 );
 
-userSchema.virtual("rank").get(function () {
+userSchema.virtual("rank").get(function (this: IUser) {
   const pages = this.totalPagesEarned;
+
   if (pages >= 30000) return "Elite";
   if (pages >= 20000) return "Master Weaver";
   if (pages >= 10000) return "Storyteller";
   if (pages >= 5000) return "Wordsmith";
   if (pages >= 1000) return "Beginner";
+
   return "Blank Page";
 });
 
-userSchema.pre("save", async function (next) {
+userSchema.pre<IUser>("save", async function (next) {
   if (!this.isModified("password")) return next();
 
   try {
@@ -68,14 +83,16 @@ userSchema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, salt);
     next();
   } catch (error) {
-    next(error);
+    next(error as Error);
   }
 });
 
-userSchema.methods.comparePassword = async function (candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password);
+userSchema.methods.comparePassword = async function (
+  candidatePassword: string,
+): Promise<boolean> {
+  return bcrypt.compare(candidatePassword, this.password);
 };
 
-const User = mongoose.model("User", userSchema);
+const User: Model<IUser> = mongoose.model<IUser>("User", userSchema);
 
-module.exports = User;
+export default User;
