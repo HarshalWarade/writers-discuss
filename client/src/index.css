@@ -1,46 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
     --font-rubik: "Rubik", sans-serif;
     --font-playfair: "Playfair Display", serif;
+    --font-archivo: "Archivo Black", serif,
 }
 
 @theme {
-    --color-primary: #3283D5;
-    --color-success: #41C95F;
-    --color-alert: #D44760;
-    --color-idle: #D2832D;
+    /* Rich, Vibrant Core Colors */
+    --color-primary: #2563EB;
+    /* Vibrant Sapphire Blue */
+    --color-success: #16A34A;
+    /* Rich Emerald */
+    --color-alert: #E11D48;
+    /* Deep Crimson */
+    --color-idle: #EA580C;
+    /* Vibrant Amber/Orange */
 
-    --color-foreground: #212121;
-    --color-background: #1A1A1A;
-    --color-text: #D4D4D4;
-    --color-text-supporting: #BABABA;
-    --color-text-shy: #606260;
-    --color-mist: #292929;
-    --color-mist-extra: #2E2E2E;
-    --color-overlay: #070707;
+    /* Structural Colors (Anti-Drastic Contrast) */
+    --color-foreground: #FFFFFF;
+    /* Pure White (for cards popping off the background) */
+    --color-background: #f8fafc;
+    /* Warm Ivory (removes the harsh glare of pure white) */
 
-    --color-red-label: #D44760;
-    --color-green-light-label: #41C96B;
-    --color-green-dark-label: #41C95F;
-    --color-green-yellow-label: #85C940;
-    --color-orange-label: #D2832D;
-    --color-yellow-label: #C9C941;
-    --color-blue-sky-label: #41C9C9;
-    --color-blue-light-label: #3283D5;
-    --color-blue-dark-label: #4040CA;
-    --color-purple-label: #8540C8;
-    --color-purple-pink-label: #C940C9;
-    --color-pink-label: #D14581;
+    /* Text Colors (Navy-Slate instead of harsh pure black) */
+    --color-text: #1E293B;
+    /* Deep Navy-Slate for main text */
+    --color-text-supporting: #475569;
+    /* Medium Navy-Slate */
+    --color-text-shy: #94A3B8;
+    /* Lighter Blue-Gray */
+
+    /* UI Accents */
+    --color-mist: #F1F5F9;
+    /* Crisp off-white/cool gray for inputs */
+    --color-mist-extra: #E2E8F0;
+    /* Sharp, clean borders */
+    --color-overlay: rgba(30, 41, 59, 0.4);
+    /* Darkened slate overlay */
+
+    /* Rich, Un-muted Labels */
+    --color-red-label: #E11D48;
+    --color-green-light-label: #22C55E;
+    --color-green-dark-label: #16A34A;
+    --color-green-yellow-label: #84CC16;
+    --color-orange-label: #F97316;
+    --color-yellow-label: #EAB308;
+    --color-blue-sky-label: #0EA5E9;
+    --color-blue-light-label: #3B82F6;
+    --color-blue-dark-label: #1D4ED8;
+    --color-purple-label: #9333EA;
+    --color-purple-pink-label: #D946EF;
+    --color-pink-label: #DB2777;
 }
 
+/* Vibrant Selection matching the Primary color */
 *::selection {
-    background: #ff040428;
+    background: rgba(37, 99, 235, 0.2);
+    color: #0F172A;
 }
 
 body {
     font-family: var(--font-rubik);
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
