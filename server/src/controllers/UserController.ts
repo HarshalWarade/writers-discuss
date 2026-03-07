@@ -1,6 +1,10 @@
-const User = require("../models/User");
+import { Request, Response } from "express";
+import User from "@models/User";
 
-exports.registerUser = async (req, res) => {
+export const registerUser = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
   try {
     const { username, email, password, bio } = req.body;
 
@@ -9,9 +13,10 @@ exports.registerUser = async (req, res) => {
     });
 
     if (existingUser) {
-      return res.status(400).json({
+      res.status(400).json({
         message: "User with this email or username already exists",
       });
+      return;
     }
 
     const user = new User({
@@ -30,7 +35,7 @@ exports.registerUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Error creating user",
-      error: error.message,
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
