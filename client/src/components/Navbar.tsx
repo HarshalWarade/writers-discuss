@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="gap-2 flex px-16 h-20">
       <div className="flex-1 flex items-center">
         {/* logo section */}
-        <NavLink to={"/"} className="font-bold text-2xl text-indigo-600">
+        <NavLink to={"/"} className="font-bold text-2xl text-indigo-800">
           WritersDiscuss
         </NavLink>
       </div>
@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* general section */}
       <div className="flex-2 flex items-center justify-end gap-4">
         <button>Login</button>
-        <button className="group flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 px-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 cursor-pointer">
+        <button className="group flex items-center gap-2 bg-indigo-800 hover:bg-indigo-700 text-white py-2.5 px-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 cursor-pointer">
           Join the community
           <svg
             className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"

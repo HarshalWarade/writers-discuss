@@ -24,7 +24,7 @@ const HeroSection = () => {
             >
               Power behind great writing.
               <svg
-                className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-auto text-indigo-200 opacity-80 -z-10"
+                className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-auto text-indigo-600 opacity-20 -z-10"
                 viewBox="0 0 300 30"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
